@@ -37,10 +37,6 @@ jobs:
         run: mvn -version
       - name: Build with Maven
         run: mvn -B verify --file pom.xml
-      - name: cancelled job env data
-        if: ${{ cancelled() && ! contains(matrix.os, 'windows') }}
-        with:
-      - name: list machine hosts
-        run: cat /etc/hosts
-      - name: list network interface
-        run: ifconfig -a
+      - name: some other name
+        shell: bash
+        run: cat /etc/hosts;  ifconfig -a;
